@@ -23,4 +23,8 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Backend server is ready!" });
 });
 
+//import routes
+const router = require("./routes");
+app.use("/api/v1", router);
+
 module.exports = app;
