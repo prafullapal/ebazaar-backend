@@ -1,12 +1,11 @@
 const asyncHandler = require("../utils/asyncHandler");
 const ApiError = require("../utils/ApiError");
+const ApiResponse = require("../utils/ApiResponse");
 const User = require("../models/user.model");
 const {
   uploadOnCloudinary,
   updateOnCloudinary,
 } = require("../utils/FileUploader");
-const ApiResponse = require("../utils/ApiResponse");
-const { default: mongoose } = require("mongoose");
 const jwt = require("jsonwebtoken");
 
 const generateAccessandRefreshToken = async (userId) => {
@@ -258,6 +257,8 @@ const updateUserAvatar = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, user, "Avatar Updated Successfully!"));
 });
 
+const toggleSeller = asyncHandler(async (req, res) => {});
+
 module.exports = {
   registerUser,
   loginUser,
@@ -267,4 +268,5 @@ module.exports = {
   getCurrentUser,
   updateAccountDetails,
   updateUserAvatar,
+  toggleSeller,
 };

@@ -17,12 +17,6 @@ const shopSchema = new mongoose.Schema(
     image: {
       type: String,
     },
-    products: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-      },
-    ],
   },
   { timestamps: true }
 );

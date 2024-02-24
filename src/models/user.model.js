@@ -27,6 +27,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    seller: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
     avatar: {
       type: String,
       required: true,
