@@ -29,7 +29,7 @@ const createShop = asyncHandler(async (req, res) => {
     name,
     description,
     owner,
-    image,
+    image: image.url,
   });
 
   return res
@@ -85,7 +85,7 @@ const updateShop = asyncHandler(async (req, res) => {
 
   shop.name = name;
   shop.description = description;
-  shop.image = image;
+  shop.image = image.url;
   await shop.save();
 
   return res
